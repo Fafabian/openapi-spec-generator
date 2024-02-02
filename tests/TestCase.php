@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\App;
 use LaravelJsonApi\OpenApiSpec\OpenApiServiceProvider;
 use LaravelJsonApi\OpenApiSpec\Tests\Support\JsonApi\V1\Server;
 use Orchestra\Testbench\TestCase as BaseTestCase;
-use Vinkla\Hashids\HashidsServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -66,7 +65,6 @@ abstract class TestCase extends BaseTestCase
             \LaravelJsonApi\Encoder\Neomerx\ServiceProvider::class,
             \LaravelJsonApi\Laravel\ServiceProvider::class,
             OpenApiServiceProvider::class,
-            HashidsServiceProvider::class,
         ];
     }
 

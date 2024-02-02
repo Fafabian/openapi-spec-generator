@@ -26,7 +26,6 @@ class User extends Authenticatable
 {
     use HasFactory;
     use Notifiable;
-    use Concerns\HashRouteKey;
 
     /**
      * The attributes that are mass assignable.

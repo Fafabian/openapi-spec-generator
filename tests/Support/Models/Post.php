@@ -31,7 +31,6 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    use Concerns\HashRouteKey;
 
     /**
      * @var string[]

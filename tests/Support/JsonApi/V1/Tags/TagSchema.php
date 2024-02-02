@@ -20,12 +20,12 @@ declare(strict_types=1);
 namespace LaravelJsonApi\OpenApiSpec\Tests\Support\JsonApi\V1\Tags;
 
 use LaravelJsonApi\Eloquent\Fields\DateTime;
+use LaravelJsonApi\Eloquent\Fields\ID;
 use LaravelJsonApi\Eloquent\Fields\Relations\BelongsToMany;
 use LaravelJsonApi\Eloquent\Fields\Str;
 use LaravelJsonApi\Eloquent\Filters\WhereIdIn;
 use LaravelJsonApi\Eloquent\Pagination\PagePagination;
 use LaravelJsonApi\Eloquent\Schema;
-use LaravelJsonApi\HashIds\HashId;
 use LaravelJsonApi\OpenApiSpec\Tests\Support\Models\Tag;
 
 class TagSchema extends Schema
@@ -43,7 +43,7 @@ class TagSchema extends Schema
     public function fields(): array
     {
         return [
-            HashId::make()->alreadyHashed(),
+            ID::make(),
             DateTime::make('createdAt')->sortable()->readOnly(),
             Str::make('name')->sortable(),
             BelongsToMany::make('posts')

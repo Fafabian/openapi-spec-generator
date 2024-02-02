@@ -20,6 +20,7 @@ declare(strict_types=1);
 namespace LaravelJsonApi\OpenApiSpec\Tests\Support\JsonApi\V1\Posts;
 
 use LaravelJsonApi\Eloquent\Fields\DateTime;
+use LaravelJsonApi\Eloquent\Fields\ID;
 use LaravelJsonApi\Eloquent\Fields\Relations\BelongsTo;
 use LaravelJsonApi\Eloquent\Fields\Relations\BelongsToMany;
 use LaravelJsonApi\Eloquent\Fields\Relations\HasMany;
@@ -34,7 +35,6 @@ use LaravelJsonApi\Eloquent\Pagination\PagePagination;
 use LaravelJsonApi\Eloquent\Schema;
 use LaravelJsonApi\Eloquent\SoftDeletes;
 use LaravelJsonApi\Eloquent\Sorting\SortCountable;
-use LaravelJsonApi\HashIds\HashId;
 use LaravelJsonApi\OpenApiSpec\Contracts\DescribesEndpoints;
 use LaravelJsonApi\OpenApiSpec\Tests\Support\Models\Post;
 
@@ -78,7 +78,7 @@ class PostSchema extends Schema implements DescribesEndpoints
     public function fields(): array
     {
         return [
-            HashId::make()->alreadyHashed(),
+            ID::make(),
             BelongsTo::make('author')->type('users')->readOnly(),
             HasMany::make('comments')->readOnly(),
             Str::make('content'),

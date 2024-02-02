@@ -1,5 +1,5 @@
 {
-    "name": "swisnl/openapi-spec-generator",
+    "name": "fafabian/openapi-spec-generator",
     "type": "library",
     "description": "Creates Open API spec for a Laravel JSON:API",
     "keywords": [
@@ -40,8 +40,7 @@
         "php": ">=7.4|^8.0",
         "goldspecdigital/oooas": "^2.8",
         "justinrainbow/json-schema": "^5.2",
-        "laravel-json-api/hashids": "^1.1|^2.0",
-        "symfony/yaml": "^5.3|^6.0"
+        "symfony/yaml": "*"
     },
     "require-dev": {
         "ext-json": "*",
